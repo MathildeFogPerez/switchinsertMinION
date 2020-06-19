@@ -60,9 +60,11 @@ All the following command lines can be run in a bash script.
 		$ #Transform to fasta format
         $ sed -n '1~4s/^@/>/p;2~4p' $DONOR.mini700bp.fastq> $DONOR.mini700bp.fasta
 
+        $ #Align reads to hg38 with LAST
         $ file=$DONOR.mini700bp.fasta
         $ last-train -P4 $genome $file > $DONOR.par
         $ lastal -P4 -p $DONOR.par $genome $file | last-split -m1e-6  > $DONOR.maf
+        
         $ #Make Switch coordinates map for insert and non insert reads
         $ echo $DONOR.maf
         $ java -jar $SCRIPTSFOLDER/MakeSwitchCoordinatesMap.jar $DONOR $file $DONOR.maf $SPECIES -50
@@ -78,5 +80,5 @@ All the following command lines can be run in a bash script.
         $ echo "Number of reads containing inserts: "
         $ grep ">" "$DONOR"_selectedReadsAfterLAST.fasta | wc -l
 
-```
- A bed file with the insert coordinates and a fasta file with the reads containing inserts will be produced at the end of the pipeline.
+
+A bed file with the insert coordinates and a fasta file with the reads containing inserts will be produced at the end of the pipeline.
