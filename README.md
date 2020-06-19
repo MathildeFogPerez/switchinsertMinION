@@ -1,6 +1,6 @@
 # Switch region PIPELINE (MinION) #
 
-Copyright (C) 2020  Mathilde Foglierini Perez / Kathrin Pieper
+Copyright (C) 2020  Mathilde Foglierini Perez
 
 email: mathilde.perez@irb.usi.ch
 
@@ -44,7 +44,7 @@ Make the last index file of the human genome hg 38.
 All the following command lines can be run in a bash script.
 
         $ DONOR="KdlR"
-        $ FOLDER="/$DONORPATH/" #where you put the $DONOR.mini700bp.fasta file
+        $ FOLDER="/$DONORPATH/" 
         $ SCRIPTSFOLDER="/PATHTOSCRIPTS/"
         $ genome="/PATHtohg38LastIndex/hg38"
         $ gencode="/PATHTOSCRIPTS/gencode.v29.geneName.annotation.sorted.bed"
