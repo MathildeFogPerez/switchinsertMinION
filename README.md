@@ -40,8 +40,9 @@ First download all scripts and needed files in a folder.
 Then we create a directory for each donor/barcode ($DONOR) and move in the 2D passed fastq file ($DONOR.fastq).
 Make the last index file of the human genome hg 38.
 All the following command lines can be run in a bash script.
-
-        $ DONOR="KdlR"
+  
+  
+		$ DONOR="KdlR"
         $ FOLDER="/$DONORPATH/" 
         $ SCRIPTSFOLDER="/PATHTOSCRIPTS/"
         $ genome="/PATHtohg38LastIndex/hg38"
