@@ -41,7 +41,7 @@ Then we create a directory for each donor/barcode ($DONOR) and move in the 2D pa
 Make the last index file of the human genome hg 38.
 All the following command lines can be run in a bash script.
   
-  
+```
 		$ DONOR="KdlR"
         $ FOLDER="/$DONORPATH/" 
         $ SCRIPTSFOLDER="/PATHTOSCRIPTS/"
@@ -52,7 +52,7 @@ All the following command lines can be run in a bash script.
         $ #Remove the reads that are below 700 bp
         $ awk 'BEGIN {OFS = "\n"} {header = $0 ; getline seq ; getline qheader ; getline qseq ; if (length(seq) >= 700) {print header, seq, qheader, qseq}}' < $DONOR.fastq > $DONOR.mini700bp.fastq
         
-		$#Transform to fasta format
+		$ #Transform to fasta format
         $ sed -n '1~4s/^@/>/p;2~4p' $DONOR.mini700bp.fastq> $DONOR.mini700bp.fasta
 
         $ file=$DONOR.mini700bp.fasta
@@ -73,5 +73,5 @@ All the following command lines can be run in a bash script.
         $ echo "Number of reads containing inserts: "
         $ grep ">" "$DONOR"_selectedReadsAfterLAST.fasta | wc -l
 
-
+```
  A bed file with the insert coordinates and a fasta file with the reads containing inserts will be produced at the end of the pipeline.
