@@ -74,4 +74,4 @@ All the following command lines can be run in a bash script.
         $ grep ">" "$DONOR"_selectedReadsAfterLAST.fasta | wc -l
 
 
-    A bed file with the insert coordinates and a fasta file with the reads containing inserts will be produced at the end of the pipeline.
+ A bed file with the insert coordinates and a fasta file with the reads containing inserts will be produced at the end of the pipeline.
