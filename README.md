@@ -13,8 +13,6 @@ The scripts are primarily intended as reference for manuscript "Antibody diversi
 
 The input of the pipeline are 2D reads coming from target amplicon of the switch region sequenced by Oxford Nanopore Technologies, quality-based filtered by Metrichor (https://metrichor.com/s/). Data can be found at SRA db: PRJNA638005 accession number.
 
-
-The general overview of the pipeline is represented in 'SuppFig_Pipeline_MinION.pdf' file.
 These scripts were run on Linux machines.
 
 
