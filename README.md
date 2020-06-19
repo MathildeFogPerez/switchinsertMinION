@@ -37,11 +37,13 @@ d) Java JDK 12 https://www.oracle.com/technetwork/java/javase/downloads/index.ht
 ### PIPELINE ###
 
 First download all scripts and needed files in a folder.
-Then we create a directory for each donor/barcode ($DONOR) and move in the 2D passed fastq file ($DONOR.fastq).
-Make the last index file of the human genome hg 38.
-All the following command lines can be run in a bash script.
+Then we create a directory for each donor/barcode ($DONOR) and move in the 2D passed fastq file ($DONOR.fastq).  
+Make the last index file of the human genome hg 38.  
+All the following command lines can be run in a bash script.  
   
-```
+  
+1. Set the variables
+
 		$ DONOR="KdlR"
         $ FOLDER="/$DONORPATH/" 
         $ SCRIPTSFOLDER="/PATHTOSCRIPTS/"
@@ -49,9 +51,12 @@ All the following command lines can be run in a bash script.
         $ gencode="/PATHTOSCRIPTS/gencode.v29.geneName.annotation.sorted.bed"
         $ SPECIES="human"	
 
+  
+2. Process the reads
+  
+
         $ #Remove the reads that are below 700 bp
-        $ awk 'BEGIN {OFS = "\n"} {header = $0 ; getline seq ; getline qheader ; getline qseq ; if (length(seq) >= 700) {print header, seq, qheader, qseq}}' < $DONOR.fastq > $DONOR.mini700bp.fastq
-        
+        $ awk 'BEGIN {OFS = "\n"} {header = $0 ; getline seq ; getline qheader ; getline qseq ; if (length(seq) >= 700) {print header, seq, qheader, qseq}}' < $DONOR.fastq > $DONOR.mini700bp.fastq       
 		$ #Transform to fasta format
         $ sed -n '1~4s/^@/>/p;2~4p' $DONOR.mini700bp.fastq> $DONOR.mini700bp.fasta
 
