@@ -2,7 +2,7 @@
 
 Copyright (C) 2020  Mathilde Foglierini Perez
 
-email: mathilde.perez@irb.usi.ch
+email: mathilde.foglierini-perez@chuv.ch
 
 ### SUMMARY ###
 
